@@ -18,15 +18,15 @@ eisenrep <- function(data, rating, weigth) {
 
   if (missing(weigth)){
     rating <- deparse(substitute(rating))
-    RepIndex <- ((sum(data[,rating]=="positiv") - sum(data[,rating]=="negativ"))/(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ") + sum(data[,rating]=="kontrovers")))*100
+    RepIndex <- ((sum(data[,rating]=="positiv") - sum(data[,rating]=="negativ"))/(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ") + sum(data[,rating]=="ambivalent")))*100
     print(paste("The unweighted Reputationindex (following Eisenegger, 2005) is ", RepIndex, ".", sep = ""))
     return(list("RepIndex"=RepIndex))
   }
   else {
     rating <- deparse(substitute(rating))
     weigth <- deparse(substitute(weigth))
-    gRepIndex <- ((sum(data[,rating]=="positiv")*sum(data[data[,rating]=="positiv", weigth])) - (sum(data[,rating]=="negativ")*sum(data[data[,rating]=="negativ", weigth])))/(sum(data[,weigth])*(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ") + sum(data[,rating]=="kontrovers")))*100
-    RepIndex <- ((sum(data[,rating]=="positiv") - sum(data[,rating]=="negativ"))/(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ") + sum(data[,rating]=="kontrovers")))*100
+    gRepIndex <- ((sum(data[,rating]=="positiv")*sum(data[data[,rating]=="positiv", weigth])) - (sum(data[,rating]=="negativ")*sum(data[data[,rating]=="negativ", weigth])))/(sum(data[,weigth])*(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ") + sum(data[,rating]=="ambivalent")))*100
+    RepIndex <- ((sum(data[,rating]=="positiv") - sum(data[,rating]=="negativ"))/(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ") + sum(data[,rating]=="ambivalent")))*100
     print(paste("The weighted Reputationindex (following Eisenegger, 2005) is ", gRepIndex, ".", sep = ""))
     print(paste("The unweighted Reputationindex (following Eisenegger, 2005) is ", RepIndex, ".", sep = ""))
     return(list("gRepIndex"=gRepIndex, "RepIndex"=RepIndex))
