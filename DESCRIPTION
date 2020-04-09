@@ -8,5 +8,3 @@ Description: This Package calculates the Reputation of a Subject following the m
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-Depends:
-  rlang, base
