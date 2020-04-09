@@ -1,6 +1,6 @@
 #' @title Calculates Reputation as defined by Eisenegger (2005)
 #'
-#' @description This Package calculates the Reputation of a Subject following the methods developed by Eisenegger (2005). The Input needs to be a dataframe containing texts (eg. Tweets, Articles, etc.), their rating ("positive", "negative", "ambivalent") and optionally a column with numeric values used as weigth (eg. Nr of Retweets, Nr of Recipients, Centrality of Agent, etc.).
+#' @description This Package calculates the Reputation of a Subject following the methods developed by Eisenegger (2005). The Input needs to be a dataframe containing texts (eg. Tweets, Articles, etc.), their rating ("positive", "negative", "ambivalent") and optionally a column with numeric values used as weigth-factor (eg. Nr of Retweets, Nr of Recipients, Centrality of Agent, etc.).
 #'
 #' @param data
 #'
