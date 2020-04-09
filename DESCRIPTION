@@ -1,0 +1,12 @@
+Package: eisenrep
+Type: Package
+Title: Calculates Reputation as defined by Eisenegger (2005)
+Version: 0.1.0
+Author: Lukas Tribelhorn
+Maintainer: Lukas Tribelhorn <rpack@ltribe.ch>
+Description: This Package calculates the Reputation of a Subject following the methods developed by Eisenegger (2005). The Input needs to be a dataframe containing texts (eg. Tweets, Articles, etc.), their rating ("positive", "negative", "ambivalent") and optionally a column with numeric values used as weigth (eg. Nr of Retweets, Nr of Recipients, Centrality of Agent, etc.).
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Depends:
+  rlang, base
