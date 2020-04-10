@@ -2,6 +2,7 @@
 This R-Package calculates the Reputation of a Subject following the methods developed by <a href="https://www.springer.com/de/book/9783531146362" target="_blank">Eisenegger (2005)</a>. An English description of the method is available in this <a href="https://www.foeg.uzh.ch/dam/jcr:00000000-13a2-35bc-0000-000078f4fa2a/True_Good_Beautiful_e.pdf" target="blank">discussion paper</a>.
 
 The Index is calculated with the following formula:
+
 ![Formula of Reputationindex (Eisenegger, 2005)](https://raw.githubusercontent.com/LTribelhorn/eisenrep/master/eisenrep.PNG)
 
 where *g* is the factor used for weighting, *P* are the positively and *N* the negatively rated articles/texts/tweets and *n* is the total sample. The index can take values from -100 to +100.
