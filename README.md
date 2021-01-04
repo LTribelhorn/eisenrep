@@ -24,7 +24,7 @@ library(devtools)
 ```
 
 ## Usage
-The Input needs to be a dataframe containing texts (eg. Tweets, Articles, etc.) or their corresponding IDs, their rating ("positive", "negative", "ambivalent") and optionally a column with numeric values used as weigth (eg. Nr of Retweets, Nr of Recipients, Centrality of Agent, etc.).
+The Input needs to be a dataframe containing texts (eg. Tweets, Articles, etc.) or their corresponding IDs, their rating ("positiv", "negativ", "ambivalent" or "neutral") and optionally a column with numeric values used as weigth (eg. Nr of Retweets, Nr of Recipients, Centrality of Agent, etc.).
 
 ``` r
 eisenrep(df, rating, followers_count)
