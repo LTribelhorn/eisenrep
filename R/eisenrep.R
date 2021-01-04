@@ -56,11 +56,11 @@ eisenrep <- function(data, rating, weigth) {
     }
   } else{
     if (missing(weigth)){
-      #return(data.frame("RepIndex"=NA))
       print(paste("The unweighted Reputationindex (following Eisenegger, 2005) can't be calculated because there are less than 2 cases.", sep = ""))
+      return(data.frame("RepIndex"=NA))
     } else{
-      #return(data.frame("gRepIndex"=NA, "RepIndex"=NA))
       print(paste("The weighted Reputationindex (following Eisenegger, 2005) can't be calculated because there are less than 2 cases.", sep = ""))
+      return(data.frame("gRepIndex"=NA, "RepIndex"=NA))
     }
   }
 }
