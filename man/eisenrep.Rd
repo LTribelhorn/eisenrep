@@ -14,10 +14,10 @@ eisenrep(data, rating, weigth)
 \item{weigth}{}
 }
 \value{
-List with the calculated Reputationindex (or Indices)
+Dataframe with the calculated Reputationindex (or Indices)
 }
 \description{
-This Package calculates the Reputation of a Subject following the methods developed by Eisenegger (2005). The Input needs to be a dataframe containing texts (eg. Tweets, Articles, etc.), their rating ("positive", "negative", "ambivalent") and optionally a column with numeric values used as weigth (eg. Nr of Retweets, Nr of Recipients, Centrality of Agent, etc.).
+This Package calculates the Reputation of a Subject following the methods developed by Eisenegger (2005). The Input needs to be a dataframe containing texts (eg. Tweets, Articles, etc.), their rating ("positiv", "negativ", "ambivalent" or "neutral") and optionally a column with numeric values used as weigth (eg. Nr of Retweets, Nr of Recipients, Centrality of Agent, etc.).
 }
 \examples{
 eisenrep(df, rating, centrality)

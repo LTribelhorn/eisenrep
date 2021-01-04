@@ -8,7 +8,7 @@
 #'
 #' @param weigth
 #'
-#' @return List with the calculated Reputationindex (or Indices)
+#' @return Dataframe with the calculated Reputationindex (or Indices)
 #'
 #' @examples eisenrep(df, rating, centrality)
 #'
@@ -20,7 +20,7 @@ eisenrep <- function(data, rating, weigth) {
     rating <- deparse(substitute(rating))
     RepIndex <- ((sum(data[,rating]=="positiv") - sum(data[,rating]=="negativ"))/(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ")+ sum(data[,rating]=="neutral") + sum(data[,rating]=="ambivalent")))*100
     print(paste("The unweighted Reputationindex (following Eisenegger, 2005) is ", RepIndex, ".", sep = ""))
-    return(list("RepIndex"=RepIndex))
+    return(data.frame("RepIndex"=RepIndex))
   }
   else {
     rating <- deparse(substitute(rating))
@@ -29,6 +29,6 @@ eisenrep <- function(data, rating, weigth) {
     RepIndex <- ((sum(data[,rating]=="positiv") - sum(data[,rating]=="negativ"))/(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ")+ sum(data[,rating]=="neutral") + sum(data[,rating]=="ambivalent")))*100
     print(paste("The weighted Reputationindex (following Eisenegger, 2005) is ", gRepIndex, ".", sep = ""))
     print(paste("The unweighted Reputationindex (following Eisenegger, 2005) is ", RepIndex, ".", sep = ""))
-    return(list("gRepIndex"=gRepIndex, "RepIndex"=RepIndex))
+    return(data.frame("gRepIndex"=gRepIndex, "RepIndex"=RepIndex))
   }
 }
