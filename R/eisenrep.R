@@ -19,16 +19,16 @@ eisenrep <- function(data, rating, weigth) {
   if (missing(weigth)){
     rating <- deparse(substitute(rating))
     RepIndex <- ((sum(data[,rating]=="positiv") - sum(data[,rating]=="negativ"))/(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ")+ sum(data[,rating]=="neutral") + sum(data[,rating]=="ambivalent")))*100
-    print(paste("The unweighted Reputationindex (following Eisenegger, 2005) is ", RepIndex, ".", sep = ""))
-    return(data.frame("RepIndex"=RepIndex))
+    print(paste("The unweighted Reputationindex (following Eisenegger, 2005) is ", ifelse(is.nan(RepIndex), NA, RepIndex), ".", sep = ""))
+    return(data.frame("RepIndex"=ifelse(is.nan(RepIndex), NA, RepIndex)))
   }
   else {
     rating <- deparse(substitute(rating))
     weigth <- deparse(substitute(weigth))
     gRepIndex <- ((sum(data[,rating]=="positiv")*sum(data[data[,rating]=="positiv", weigth])) - (sum(data[,rating]=="negativ")*sum(data[data[,rating]=="negativ", weigth])))/(sum(data[,weigth])*(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ")+ sum(data[,rating]=="neutral") + sum(data[,rating]=="ambivalent")))*100
     RepIndex <- ((sum(data[,rating]=="positiv") - sum(data[,rating]=="negativ"))/(sum(data[,rating]=="positiv") + sum(data[,rating]=="negativ")+ sum(data[,rating]=="neutral") + sum(data[,rating]=="ambivalent")))*100
-    print(paste("The weighted Reputationindex (following Eisenegger, 2005) is ", gRepIndex, ".", sep = ""))
-    print(paste("The unweighted Reputationindex (following Eisenegger, 2005) is ", RepIndex, ".", sep = ""))
-    return(data.frame("gRepIndex"=gRepIndex, "RepIndex"=RepIndex))
+    print(paste("The weighted Reputationindex (following Eisenegger, 2005) is ", ifelse(is.nan(gRepIndex), NA, gRepIndex), ".", sep = ""))
+    print(paste("The unweighted Reputationindex (following Eisenegger, 2005) is ", ifelse(is.nan(RepIndex), NA, RepIndex), ".", sep = ""))
+    return(data.frame("gRepIndex"=ifelse(is.nan(gRepIndex), NA, gRepIndex), "RepIndex"=ifelse(is.nan(RepIndex), NA, RepIndex)))
   }
 }
