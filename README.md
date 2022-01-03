@@ -5,7 +5,7 @@ The Index is calculated with the following formula:
 
 ![Formula of Reputationindex (Eisenegger, 2005)](https://raw.githubusercontent.com/LTribelhorn/eisenrep/master/eisenrep.PNG)
 
-where *g* is the factor used for weighting, *P* are the positively and *N* the negatively rated articles/texts/tweets and *n* is the total sample. The index can take values from -100 to +100.
+where *g* is the factor used for weighting, *P* are the positively and *N* the negatively rated elements (eg. articles/texts/tweets) and *n* is the total sample. The index can take values from -100 to +100.
 
 
 ## Installation
